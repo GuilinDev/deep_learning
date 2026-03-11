@@ -2,7 +2,8 @@
 extends CharacterBody2D  # ⭐ 改为CharacterBody2D
 
 # NPC信息
-@export var npc_name: String = "张三"
+@export var npc_name: String = "张三"  # 后端通信用的ID
+@export var npc_display_name: String = ""  # 显示名(为空则用npc_name)
 @export var npc_title: String = "Python工程师"
 
 # NPC外观配置
@@ -41,8 +42,10 @@ func _ready():
 	# 添加到npcs组 ⭐ 
 	add_to_group("npcs")
 
-	# 设置NPC名字
-	name_label.text = npc_name
+	# 设置NPC显示名
+	if npc_display_name == "":
+		npc_display_name = npc_name
+	name_label.text = npc_display_name
 
 	# 连接交互区域信号
 	interaction_area.body_entered.connect(_on_body_entered)

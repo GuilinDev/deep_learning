@@ -5,6 +5,12 @@ extends Node2D
 @onready var npc_zhang: Node2D = $NPCs/NPC_Zhang
 @onready var npc_li: Node2D = $NPCs/NPC_Li
 @onready var npc_wang: Node2D = $NPCs/NPC_Wang
+@onready var npc_guilin: Node2D = $NPCs/NPC_Guilin
+@onready var npc_kai: Node2D = $NPCs/NPC_Kai
+@onready var npc_jeffrey: Node2D = $NPCs/NPC_Jeffrey
+@onready var npc_wei: Node2D = $NPCs/NPC_Wei
+@onready var npc_shannon: Node2D = $NPCs/NPC_Shannon
+@onready var npc_jeffrey2: Node2D = $NPCs/NPC_Jeffrey2
 
 # API客户端
 var api_client: Node = null
@@ -14,12 +20,12 @@ var status_update_timer: float = 0.0
 
 func _ready():
 	print("[INFO] 主场景初始化")
-	
+
 	# 获取API客户端
 	api_client = get_node_or_null("/root/APIClient")
 	if api_client:
 		api_client.npc_status_received.connect(_on_npc_status_received)
-		
+
 		# 立即获取一次NPC状态
 		api_client.get_npc_status()
 	else:
@@ -36,7 +42,7 @@ func _process(delta: float):
 func _on_npc_status_received(dialogues: Dictionary):
 	"""收到NPC状态更新"""
 	print("[INFO] 更新NPC状态: ", dialogues)
-	
+
 	# 更新各个NPC的对话
 	for npc_name in dialogues:
 		var dialogue = dialogues[npc_name]
@@ -57,5 +63,17 @@ func get_npc_node(npc_name: String) -> Node2D:
 			return npc_li
 		"王五":
 			return npc_wang
+		"Guilin":
+			return npc_guilin
+		"Kai":
+			return npc_kai
+		"Jeffrey":
+			return npc_jeffrey
+		"Wei":
+			return npc_wei
+		"Shannon":
+			return npc_shannon
+		"Jeffrey2":
+			return npc_jeffrey2
 		_:
 			return null

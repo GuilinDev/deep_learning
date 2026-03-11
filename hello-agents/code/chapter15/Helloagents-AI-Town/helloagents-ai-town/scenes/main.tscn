@@ -418,6 +418,46 @@ npc_title = "UI设计师"
 sprite_frames = SubResource("SpriteFrames_dp3eg")
 wander_range = 0.0
 
+[node name="NPC_Guilin" parent="NPCs" instance=ExtResource("3_jyhfs")]
+position = Vector2(550, 170)
+npc_name = "Guilin"
+npc_title = "AI Researcher"
+move_speed = 35.0
+
+[node name="NPC_Kai" parent="NPCs" instance=ExtResource("3_jyhfs")]
+position = Vector2(900, 350)
+npc_name = "Kai"
+npc_title = "Full-Stack Engineer"
+sprite_frames = SubResource("SpriteFrames_tbgi4")
+move_speed = 40.0
+
+[node name="NPC_Jeffrey" parent="NPCs" instance=ExtResource("3_jyhfs")]
+position = Vector2(750, 250)
+npc_name = "Jeffrey"
+npc_title = "Algorithm Engineer"
+sprite_frames = SubResource("SpriteFrames_dp3eg")
+move_speed = 30.0
+
+[node name="NPC_Wei" parent="NPCs" instance=ExtResource("3_jyhfs")]
+position = Vector2(1100, 400)
+npc_name = "Wei"
+npc_title = "Data Scientist"
+move_speed = 25.0
+
+[node name="NPC_Shannon" parent="NPCs" instance=ExtResource("3_jyhfs")]
+position = Vector2(200, 170)
+npc_name = "Shannon"
+npc_title = "Security Engineer"
+sprite_frames = SubResource("SpriteFrames_tbgi4")
+move_speed = 20.0
+
+[node name="NPC_Jeffrey2" parent="NPCs" instance=ExtResource("3_jyhfs")]
+position = Vector2(650, 430)
+npc_name = "Jeffrey2"
+npc_display_name = "Jeffrey"
+npc_title = "DevRel Advocate"
+move_speed = 35.0
+
 [node name="DialogueUI" parent="." instance=ExtResource("5_tefeu")]
 
 [node name="Walls" type="Node2D" parent="."]

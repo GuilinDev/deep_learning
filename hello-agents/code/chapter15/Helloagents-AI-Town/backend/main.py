@@ -1,5 +1,8 @@
 """赛博小镇 FastAPI 后端主程序"""
 
+from dotenv import load_dotenv
+load_dotenv()  # 必须在其他模块导入之前加载环境变量
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager

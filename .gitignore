@@ -1,3 +1,10 @@
 .venv
 
 .env
+
+*.pyc
+
+*.log
+
+*.db
+*settings.local.json
